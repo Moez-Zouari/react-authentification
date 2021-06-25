@@ -27,7 +27,7 @@ const AuthForm = () => {
     let url;
     if (isLogin) {
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCwiu8ff8m6Uo9WyWl1QpeZ7RTAcJztIRY";
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCwiu8ff8m6Uo9WyWl1QpeZ7RTAcJztIRY";
     } else {
       url =
         "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCwiu8ff8m6Uo9WyWl1QpeZ7RTAcJztIRY";
@@ -54,7 +54,6 @@ const AuthForm = () => {
             // if (data && data.error && data.error.message) {
             //   errorMessage = data.error.message;
             // }
-
             throw new Error(errorMessage);
           });
         }
@@ -88,7 +87,7 @@ const AuthForm = () => {
           {!isLoading && (
             <button>{isLogin ? "Login" : "Create Account"}</button>
           )}
-          {isLoading && <p>Sending Request ...</p>}
+          {isLoading && <p>Sending request...</p>}
           <button
             type="button"
             className={classes.toggle}
@@ -101,5 +100,4 @@ const AuthForm = () => {
     </section>
   );
 };
-
 export default AuthForm;
